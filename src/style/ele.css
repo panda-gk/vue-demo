@@ -1,0 +1,6 @@
+/* 重置element ui样式 */
+.el-button--small{
+  border-radius:5px;
+  height:32px;
+  padding:8px 15px;
+}

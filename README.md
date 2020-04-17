@@ -1,2 +1,34 @@
-# vue-demo
-vue+vuex+axios+element-ui 搭建好的完整项目结构 支持项目通过命令打包不同的环境
+# xiaoy-zhibo-saas
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
