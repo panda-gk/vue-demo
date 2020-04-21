@@ -5,7 +5,7 @@ import EnvConfig from './../config'
 axios.defaults.baseURL = EnvConfig.BASE_URL
 
 axios.interceptors.request.use((config) => {
-  const token = cache.token || ''
+  const token = token || ''
 
   if (EnvConfig.APP_ENV !== 'mock') {
     config.headers['X-TOKEN'] = token
@@ -24,7 +24,7 @@ axios.interceptors.request.use((config) => {
 
 axios.interceptors.response.use((response) => {
 
-  if (EnvConfig.API_BASE_URL.indexOf('mock.ywwl') > -1) {
+  if (EnvConfig.BASE_URL.indexOf('yapi.mockuai') > -1) {
     return response.data.data
   }
   const { code } = response.data
@@ -37,11 +37,11 @@ axios.interceptors.response.use((response) => {
   } else if (code === 1) {
     return Promise.resolve(response.data.data)
   } else {
-    message.warn(response.data.msg || '服务正忙，请稍后再试~')
+    // message.warn(response.data.msg || '服务正忙，请稍后再试~')
     return Promise.reject(response.data.data)
   }
 }, err => {
-  message.error('服务正忙，请稍后再试~')
+  // message.error('服务正忙，请稍后再试~')
   return Promise.reject(err)
 })
 

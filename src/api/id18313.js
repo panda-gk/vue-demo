@@ -21,51 +21,9 @@
 <span class="colour" style="color: rgb(0, 0, 0);">}</span>
       **/
       
-    import request from './js/ajax'
-    type Serve<T, G> = (data?: T) => Promise<G>
-    export class IReqid18313 {
-  offset: string | number;
-  count: string | number;
-  /**
-   * 任务类型(100:战队任务 200日常营销任务 300 红包任务)
-   */
-  mission_type?: string | number;
-  /**
-   * 状态(100 草稿 200已发布 300 进行中 400 已结束)
-   */
-  state?: string | number;
-  /**
-   * 1快手 2花椒 企鹅小店不传
-   */
-  channel?: string | number;
-  /**
-   * 见tag列表 传id
-   */
-  tag?: string | number;
-  /**
-   * mokuaitv 星选  weishi企鹅小店
-   */
-  business?: string | number;
-}
-    export class IResid18313 {
-  data: {
-    total_count: number;
-    data: {
-      mission_title: string;
-      state: 100 | 200 | 300 | 400;
-      mission_start_time: string;
-      mission_end_time: string;
-      mission_type: 100 | 200 | 300;
-      id: string;
-    }[];
-  };
-  code: number;
-}
+    import request from '../js/ajax'
     
-      export default (data?): Serve<
-        IReqid18313,
-        IResid18313['data']
-      > => request({
+      export default (data) => request({
         method: 'GET',
         url: '/ec/m/operation/mission/list',
         data: {params: data}

@@ -1,7 +1,7 @@
 
 
 const config = {
-  target: 'ts',
+  target: 'js',
   serverUrl: 'http://yapi.mockuai.com',
   outputFilePath: 'src/api',
   projectId: '1434',
@@ -17,15 +17,10 @@ const config = {
       * ${api.markdown || ''}
       **/
       `,
-      "import request from './js/ajax'",
-      'type Serve<T, G> = (data?: T) => Promise<G>',
-      api.requestInterface,
-      api.responseInterface,
+      "import request from '../js/ajax'",
+     
       `
-      export default (data?): Serve<
-        ${api.reqInterfaceName},
-        ${api.resInterfaceName}['data']
-      > => request({
+      export default (data) => request({
         method: '${api.method}',
         url: '${api.path}',
         data: ${(() => {

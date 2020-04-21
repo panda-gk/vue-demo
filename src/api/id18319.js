@@ -64,56 +64,9 @@
 <span class="colour" style="color:rgb(0, 0, 0)">}</span>
       **/
       
-    import request from './js/ajax'
-    type Serve<T, G> = (data?: T) => Promise<G>
-    export class IReqid18319 {
-  id: string | number;
-}
-    export class IResid18319 {
-  data: {
-    id: string;
-    mission_title: string;
-    mission_description: string;
-    mission_start_time: string;
-    mission_end_time: string;
-    mission_type: 100 | 200 | 300;
-    mission_provider: 100 | 200 | 300;
-    mission_detail: string[];
-    mission_remark: string;
-    mission_picture: string;
-    channel: number;
-    identity_type: number;
-    identity_value: (1 | 2 | 3 | 8)[];
-    execution_start_time_type: 1 | 2;
-    execution_end_time_type: 1 | 2;
-    execution_end_time_days: number;
-    mission_gameplay_template: 1 | 2;
-    award_handout_time_type: 1 | 2;
-    award_handout_fixed_time: string;
-    award_handout_after_days: number;
-    business: string;
-    reward_rules: {
-      id: number;
-      award_name: string;
-      release_time: string;
-      award_handout_time_type: string;
-      currency_type: 1 | 2;
-    }[];
-    tags: {
-      tag_id: number;
-      tag_name: string;
-    }[];
-    receive_rule: 1 | 2 | 3;
-    file: string;
-  };
-  code: number;
-  msg: string;
-}
+    import request from '../js/ajax'
     
-      export default (data?): Serve<
-        IReqid18319,
-        IResid18319['data']
-      > => request({
+      export default (data) => request({
         method: 'GET',
         url: '/ec/m/operation/mission/detail',
         data: {params: data}
