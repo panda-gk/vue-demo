@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import { watchEq } from '../service/index.js'
+import API from './api'
 
 export default {
   name: 'home',
@@ -17,13 +17,10 @@ export default {
   },
   mounted () {
     this.getTest()
+    consee
   },
   methods: {
-    getTest () {
-      watchEq({}).then((res) => {
-        console.log(res)
-      })
-    }
+    
   }
 }
 </script>

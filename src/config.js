@@ -6,7 +6,7 @@
 // let root = process.env.NODE_ENV == "development" ? "https://dev.api.hzskss.com/" : 'https://api.hzskss.com/';
 const config = {
   development: {
-    api: '//test.pl.k6.com/ywwl-rebate-test',
+    api: '//yapi.mockuai.com/mock/1434/',
     static: '/'
   },
   test: {
